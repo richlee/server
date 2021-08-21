@@ -1,4 +1,3 @@
 emaily
 
-
-https://rocky-springs-75055.herokuapp.com/ | https://git.heroku.com/rocky-springs-75055.git
+https://salty-dusk-06450.herokuapp.com/ | https://git.heroku.com/salty-dusk-06450.git
