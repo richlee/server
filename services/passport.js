@@ -10,7 +10,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-    User.findById({ id })
+    User.findById(id)
     .then(user => {
         done(null, user);
     })
@@ -18,7 +18,7 @@ passport.deserializeUser((id, done) => {
 });
 
 passport.use(
-    new GoogleStrategy({
+    new GoogleStrategy({ 
         clientID: keys.googleClientID,
         clientSecret: keys.googleClientSecret,
         callbackURL: '/auth/google/callback'
