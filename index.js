@@ -10,16 +10,17 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 
+// wire up middleware pipeline to use session and passport for auth
 app.use(
     cookieSession({
         maxAge: 30 * 24 * 60 * 60 * 1000,
         keys: [keys.cookieKey]
     })
 );
-
 app.use(passport.initialize());
 app.use(passport.session());
 
+// after middleware do routing to app
 require('./routes/authRoutes')(app); // require returns a function, which is immediately invoked, passing 'app' to attach the two route handlers
 
 const PORT = process.env.PORT || 5000;
