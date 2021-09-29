@@ -32,6 +32,7 @@ passport.use(
                 return done(null, existingUser);
             } 
 
+            // make a new record
             const user = await new User({ googleId: profile.id }).save();
             return done(null, user);
         }
